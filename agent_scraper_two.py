@@ -28,11 +28,11 @@ class OpenAIModelFee(BaseModel):
 def scrape_data(url: str) -> Optional[OpenAIModelFee]:
     """Scrape brand content from a given Shopify brand URL."""
     
-    crawler = WebCrawler()
+    crawler = WebCrawler(url)
     crawler.warmup()
 
     try:
-        result = crawler.run(url=url, word_count_threshodl=1, bypass_cache=True)
+        result = crawler.run(url=url,  extraction_strategy="shopify", word_count_threshodl=1, bypass_cache=True)
         full_context = result["text"] if isinstance(result, dict) else result
 
         llm = OpenAI(model="gpt-4o", api_key=os.getenv("OPENAI_API_KEY"))
