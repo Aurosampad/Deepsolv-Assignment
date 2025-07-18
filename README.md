@@ -1,5 +1,4 @@
 
-```
 # **DEEPSOLV ASSIGNMENT – Shopify Brand Intelligence and Competitor Insights Engine**
 
 **Author**: Aurosampad Mohanty  
